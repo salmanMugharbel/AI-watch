@@ -1,0 +1,36 @@
+# AI Media Watch — Python dependencies
+# Install with:  pip install -r requirements.txt
+
+# ── Web UI ──────────────────────────────────────────────────────────────────
+streamlit>=1.32.0
+plotly>=5.20.0
+pandas>=2.1.0          # detection detail table in visual section
+
+# ── Video / audio ────────────────────────────────────────────────────────────
+opencv-python-headless>=4.9.0
+imageio-ffmpeg>=0.4.9  # ships a static FFmpeg binary — no system install needed
+
+# ── Speech-to-text ───────────────────────────────────────────────────────────
+faster-whisper>=1.0.0
+
+# ── OCR ──────────────────────────────────────────────────────────────────────
+easyocr>=1.7.1
+
+# ── NLP / zero-shot classification ──────────────────────────────────────────
+transformers>=4.40.0   # also used by CLIP — no duplicate install
+sentencepiece>=0.2.0
+torch>=2.2.0           # CPU build is fine; use torch+cu121 for GPU
+
+# ── YOLOv8 object detection ──────────────────────────────────────────────────
+# Downloads yolov8n.pt (~6 MB) automatically on first run.
+ultralytics>=8.2.0
+
+# ── QR code detection ────────────────────────────────────────────────────────
+# pyzbar ships the zbar DLLs on Windows via python-pyzbar.
+# If import fails at runtime the app skips QR detection gracefully.
+pyzbar>=0.1.9
+
+# ── Utilities ────────────────────────────────────────────────────────────────
+pillow>=10.3.0
+numpy>=1.26.0
+requests>=2.31.0       # Ollama HTTP client
